@@ -602,10 +602,10 @@
 \newcommand*{\cvsubentry}[4]{%
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{ L{0.75cm} L{\textwidth - 5.25cm} R{4.5cm}}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.75cm} L{\textwidth - 5.25cm} R{4.5cm}}
     \setlength\leftskip{0.2cm}
     \subentrytitlestyle{#1} & \subentrytitlestyle{#2} & \subentrydatestyle{#3} \\
-    & \multicolumn{2}{L{\textwidth - 0.75cm}}{\subdescriptionstyle{#4}}\\
+    \multicolumn{3}{@{\extracolsep{\fill}} L{\textwidth - 0.4cm}}{\subdescriptionstyle{#4}}\\
   \end{tabular*}
 }
 
