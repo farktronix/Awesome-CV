@@ -10,9 +10,12 @@ resume.pdf: resume.tex $(RESUME_SRCS)
 	$(TEX) $<
 	open resume.pdf
 	convert -density 400 -depth 8 -background white -alpha remove resume.pdf -resize 33% resume.png
+	pngcrush resume.png /tmp/resume-crushed.png
+	cp /tmp/resume-crushed.png resume.png
 
 coverletter.pdf: coverletter.tex
 	$(TEX) $<
 
 clean:
 	rm -rf *.pdf
+	rm -rf *.png

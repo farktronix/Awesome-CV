@@ -384,7 +384,7 @@
 
 % Others
 \newcommand{\acvSectionTopSkip}{1mm}
-\newcommand{\acvSectionContentTopSkip}{1.5mm}
+\newcommand{\acvSectionContentTopSkip}{2.0mm}
 
 
 %-------------------------------------------------------------------------------
@@ -572,6 +572,7 @@
   \vspace{\acvSectionContentTopSkip}
   \begin{center}
 }{%
+  \vspace{-4.0mm}
   \end{center}
 }
 % Define an entry of cv information
@@ -601,10 +602,10 @@
 \newcommand*{\cvsubentry}[4]{%
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.75cm} L{\textwidth - 4.5cm} R{4.5cm}}
+  \begin{tabular*}{\textwidth}{ L{0.75cm} L{\textwidth - 5.25cm} R{4.5cm}}
     \setlength\leftskip{0.2cm}
     \subentrytitlestyle{#1} & \subentrytitlestyle{#2} & \subentrydatestyle{#3} \\
-    \multicolumn{3}{L{18.75cm}}{\subdescriptionstyle{#4}}\\
+    & \multicolumn{2}{L{\textwidth - 0.75cm}}{\subdescriptionstyle{#4}}\\
   \end{tabular*}
 }
 
@@ -647,7 +648,7 @@
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
   \begin{justify}
-  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \begin{itemize}[leftmargin=3ex, nosep, noitemsep]
     \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}
 }{%
