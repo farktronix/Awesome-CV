@@ -199,7 +199,7 @@
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{6pt}{1em}\footerfont\scshape\color{lighttext} #1}}
 \newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor[#1]}}
-\newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
+\newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
 
 % For elements of entry
@@ -210,6 +210,7 @@
 \newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of subentry
+\newcommand*{\subentryiconstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\mdseries\color{awesome} #1}}
 \newcommand*{\subentrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
 \newcommand*{\subentrypositionstyle}[1]{{\fontsize{7pt}{1em}\bodyfont\scshape\color{graytext} #1}}
 \newcommand*{\subentrydatestyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
@@ -225,6 +226,10 @@
 % For elements of skill
 \newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
+
+% For elements of education
+\newcommand*{\eduiconstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\mdseries\color{awesome} #1}}
+\newcommand*{\eduitemstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
 
 % For elements of the cover letter
 \newcommand*{\lettersectionstyle}[1]{{\fontsize{14pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor[#1]}}
@@ -553,6 +558,7 @@
 % Usage: \cvsubsection{<subsection-title>}
 \newcommand{\cvsubsection}[1]{%
   \vspace{\acvSectionContentTopSkip}
+  \setlength\leftskip{0.1cm}
   \subsectionstyle{#1}
   \phantomsection
 }
@@ -604,7 +610,7 @@
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.75cm} L{\textwidth - 5.25cm} R{4.5cm}}
     \setlength\leftskip{0.2cm}
-    \subentrytitlestyle{#1} & \subentrytitlestyle{#2} & \subentrydatestyle{#3} \\
+    \subentryiconstyle{#1} & \subentrytitlestyle{#2} & \subentrydatestyle{#3} \\
     \multicolumn{3}{@{\extracolsep{\fill}} L{\textwidth - 0.4cm}}{\subdescriptionstyle{#4}}\\
   \end{tabular*}
 }
@@ -630,15 +636,24 @@
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-2.0mm}
+  \vspace{-4.0mm}
   \begin{center}
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{\textwidth * \real{0.9}}}
+    \begin{tabular*}{\textwidth}{L{\textwidth * \real{0.5}} L{\textwidth * \real{0.5}}}
 }{%
     \end{tabular*}
   \end{center}
 }
+
+\newenvironment{cvskillgroup}{%
+    	\setlength\tabcolsep{1ex}
+    	\setlength{\extrarowheight}{0pt}
+    	\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}  r L{\linewidth * \real{0.9}}}
+}{%
+	\end{tabular*}
+}
+
 % Define a line of cv information(skill)
 % Usage: \cvskill{<type>}{<skillset>}
 \newcommand*{\cvskill}[2]{%
@@ -654,6 +669,11 @@
 }{%
   \end{itemize}
   \end{justify}
+}
+
+\newcommand*{\eduitem}[2]{%
+	\vspace{-3mm}
+	\item \eduiconstyle{#1}~~~\eduitemstyle{#2} \\
 }
 
 
