@@ -216,6 +216,7 @@
 \newcommand*{\subentrydatestyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\subentrylocationstyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 \newcommand*{\subdescriptionstyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\subdescriptionsummarystyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 
 % For elements of honor
 \newcommand*{\honortitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
@@ -607,13 +608,13 @@
 }
 % Define a subentry of cv information
 % Usage: \cvsubentry{<icon>}{<title>}{<date>}{<description>}
-\newcommand*{\cvsubentry}[4]{%
+\newcommand*{\cvsubentry}[5]{%
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.75cm} L{\textwidth - 5.25cm} R{4.5cm}}
     \setlength\leftskip{0.2cm}
     \subentryiconstyle{#1} & \subentrytitlestyle{#2} & \subentrydatestyle{#3} \\
-    \multicolumn{3}{@{\extracolsep{\fill}} L{\textwidth - 0.4cm}}{\subdescriptionstyle{#4}}\\
+    \multicolumn{3}{@{\extracolsep{\fill}} L{\textwidth - 0.4cm}}{\ifempty{#4}{\vspace{-3.0mm}\subdescriptionstyle{#5}}{\subdescriptionsummarystyle{#4} \vspace{1.0mm} \subdescriptionstyle{#5}}}\\
   \end{tabular*}
 }
 
