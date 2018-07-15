@@ -388,7 +388,7 @@
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 
 % Others
-\newcommand{\acvSectionTopSkip}{1mm}
+\newcommand{\acvSectionTopSkip}{0.2mm}
 \newcommand{\acvSectionContentTopSkip}{2.0mm}
 
 
@@ -405,6 +405,8 @@
 
 % Use to execute conditional statements by checking empty string
 \newcommand*{\ifempty}[3]{\ifthenelse{\isempty{#1}}{#2}{#3}}
+
+\newcommand{\colorlink}[2]{{\color{link}\href{#1}{#2}}}
 
 
 %-------------------------------------------------------------------------------
