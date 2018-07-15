@@ -383,8 +383,8 @@
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 
 % Others
-\newcommand{\acvSectionTopSkip}{2mm}
-\newcommand{\acvSectionContentTopSkip}{2.5mm}
+\newcommand{\acvSectionTopSkip}{1mm}
+\newcommand{\acvSectionContentTopSkip}{1.5mm}
 
 
 %-------------------------------------------------------------------------------
@@ -604,7 +604,7 @@
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.75cm} L{\textwidth - 4.5cm} R{4.5cm}}
     \setlength\leftskip{0.2cm}
     \subentrytitlestyle{#1} & \subentrytitlestyle{#2} & \subentrydatestyle{#3} \\
-    \multicolumn{3}{L{18.1cm}}{\subdescriptionstyle{#4}}\\
+    \multicolumn{3}{L{18.75cm}}{\subdescriptionstyle{#4}}\\
   \end{tabular*}
 }
 

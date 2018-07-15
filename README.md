@@ -1,5 +1,5 @@
 # Jacob Farkas
-![Resume](resume.pdf)
+![Resume](resume.png)
 
 ## Credit
 

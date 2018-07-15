@@ -9,9 +9,10 @@ all: $(foreach x, coverletter resume, $x.pdf)
 resume.pdf: resume.tex $(RESUME_SRCS)
 	$(TEX) $<
 	open resume.pdf
+	convert -density 400 -depth 8 -background white -alpha remove resume.pdf -resize 33% resume.png
 
 coverletter.pdf: coverletter.tex
 	$(TEX) $<
 
 clean:
-	rm -rf $(EXAMPLES_DIR)/*.pdf
+	rm -rf *.pdf
